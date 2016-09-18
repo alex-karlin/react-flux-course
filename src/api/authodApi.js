@@ -46,7 +46,9 @@ var AuthorApi = {
 
     deleteAuthor: function(id) {
         console.log('Pretend this just deleted the author from the DB via an AJAX call...');
-        _.remove(authors, { id: id});
+        var author = _.find(authors, {id: id});
+        var index = _.indexOf(authors, author);
+        authors.splice(index, 1);
     }
 };
 
